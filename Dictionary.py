@@ -17,6 +17,9 @@ while stop == False:
     if word == "":
         stop = True
         word = " "
+    for i in range(len(word)-1):
+        if word[i] == " ":
+            word = word[:i] + "-" + word[i+1:]
     link += word
     response = getPage(link)
     frase = word + " definition"
